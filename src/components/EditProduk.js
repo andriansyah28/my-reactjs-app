@@ -9,7 +9,7 @@ const EditProduct = () => {
 
     useEffect(() => {
         getProductById();
-    }, []);
+    }, []); 
     
     const getProductById = async () => {
         const response = await fetch(`http://localhost:8080/product/${id}`);
