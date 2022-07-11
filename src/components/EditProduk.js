@@ -13,9 +13,9 @@ const EditProduct = () => {
     
     const getProductById = async () => {
         const response = await fetch(`http://localhost:8080/product/${id}`);
-        const kopet = await response.json();
-        setTitle(kopet.title);
-        setPrice(kopet.price);
+        const data = await response.json();
+        setTitle(data.title);
+        setPrice(data.price);
     } 
     const saveProduct = async(e) => {
         e.preventDefault();
