@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const ProductList = ({ }) => {
     const [products, setProducts] = useState([]);
@@ -30,7 +31,7 @@ const ProductList = ({ }) => {
                             <td>{product.title}</td>
                             <td>{product.price}</td>
                             <td>
-                                <button className= "button is-small is-info">EDIT</button>
+                                <link to={'/edit/${product.id}'} className= "button is-small is-info">EDIT</link>
                                 <button className= "button is-small is-danger">DELEATE</button>
                             </td>
                         </tr>
