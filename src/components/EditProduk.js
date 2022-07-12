@@ -17,11 +17,11 @@ const EditProduct = () => {
         setTitle(data.title);
         setPrice(data.price);
     } 
-    const saveProduct = async(e) => {
+    const updateProduct = async(e) => {
         e.preventDefault();
         const product = { title, price };
-        await fetch('http://localhost:8080/product',{
-            method: "POST",
+        await fetch(`http://localhost:8080/product/${id}`,{
+            method: "PUT",
             body: JSON.stringify(product),
             headers:{
                 'Content-Type': 'application/json'
@@ -32,7 +32,7 @@ const EditProduct = () => {
  
     return (  
         <div>
-            <form onSubmit={saveProduct}>
+            <form onSubmit={updateProduct}>
                 <div className="field">
                 <label className="label">Title</label>
                 <div className="control">
